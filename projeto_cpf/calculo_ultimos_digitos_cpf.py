@@ -1,5 +1,6 @@
-def calculo_digito(cpf, contador):
+def calculo_digito(cpf):
     soma_produto = 0
+    contador = len(cpf) + 1
     for digito in cpf:
         soma_produto += int(digito) * contador
         contador -= 1
@@ -30,19 +31,14 @@ while True:
         continue
 
     cpf_nove_digitos = cpf_entrada[:9]
-    regressivo_1 = 10
-    
-    penultimo_digito = calculo_digito(cpf_nove_digitos, regressivo_1)
+    penultimo_digito = calculo_digito(cpf_nove_digitos)
     print(f'O penúltimo digito do CPF é {penultimo_digito}.')
 
     cpf_dez_digitos = cpf_nove_digitos + str(penultimo_digito)
-    regressivo_2 = 11
-    
-    ultimo_digito = calculo_digito(cpf_dez_digitos, regressivo_2)
+    ultimo_digito = calculo_digito(cpf_dez_digitos)
     print(f'O último digito do CPF é {ultimo_digito}.')
 
     cpf_gerado = cpf_dez_digitos + str(ultimo_digito)
-    cpf_invalido = cpf_entrada != cpf_gerado
-    
+    cpf_invalido = cpf_entrada != cpf_gerado 
     if cpf_invalido:
         print('O CPF fornecido é inválido!')
