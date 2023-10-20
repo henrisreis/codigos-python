@@ -1,2 +1,2 @@
 # codigos-python
- Códigos desenvolvidos durante o meu processo de aprendizagem de Python.
+ Exercícios e projetos desenvolvidos durante o meu processo de aprendizagem de Python.
